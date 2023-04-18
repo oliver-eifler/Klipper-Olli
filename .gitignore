@@ -1,4 +1,8 @@
 *.bkp
 *.bak
 saved_variables.cfg
+mainsail.cfg
+timelapse.cfg
+sonar.conf
+crowsnest.conf
 
