@@ -1,3 +1,4 @@
 *.bkp
 *.bak
+*-*_*.cfg
 saved_variables.cfg
