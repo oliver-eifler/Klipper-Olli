@@ -1,4 +1,6 @@
 *.bkp
 *.bak
 *-*_*.cfg
+input_shaper/
+input_shaper/*
 saved_variables.cfg
