@@ -12,5 +12,5 @@ __For internal use only__
 - Sensorless homing X/Y
 - Independent dual Z
 - E3D Revo Hotend
-- OMG V2s Extruder
+- Bondtech BMG direct extruder
 - usb-adxl345
