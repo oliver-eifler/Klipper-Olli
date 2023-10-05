@@ -3,4 +3,6 @@
 *-*_*.cfg
 input_shaper/
 input_shaper/*
+binaries/
+binaries/*
 saved_variables.cfg
