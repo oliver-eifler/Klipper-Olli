@@ -1,6 +1,7 @@
 *.bkp
 *.bak
 /printer.cfg
+/timelapse.cfg
 *-*_*.cfg
 input_shaper/
 input_shaper/*
