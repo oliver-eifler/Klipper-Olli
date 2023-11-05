@@ -1,5 +1,6 @@
 *.bkp
 *.bak
+*.code-workspace
 /printer.cfg
 *-*_*.cfg
 input_shaper/
