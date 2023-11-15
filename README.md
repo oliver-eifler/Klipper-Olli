@@ -17,6 +17,8 @@ __For internal use only__
 - usb-adxl345
 
 __Install__: 
-
-- ln -s ~/printer_data/config/klippy/olli_homing.py ~/klipper/klippy/extras/olli_homing.py
-- ln -s ~/printer_data/config/printers/moose/printer.cfg ~/printer_data/config/printer.cfg
+```
+ln -s ~/printer_data/config/klippy/gcode_shell_command.py ~/klipper/klippy/extras/gcode_shell_command.py
+ln -s ~/printer_data/config/klippy/olli_homing.py ~/klipper/klippy/extras/olli_homing.py
+ln -s ~/printer_data/config/printers/moose/printer.cfg ~/printer_data/config/printer.cfg
+```
