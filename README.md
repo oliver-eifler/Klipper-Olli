@@ -11,7 +11,8 @@ __For internal use only__
 - BTT Octopus V1.0, Raspberry Pad with CM4
 - Independent dual Z
 - E3D Revo Hotend
-- Bondtech BMG direct extruder
+- LDO Orbit v2.0 Extruder with Orbiter Filament Sensor
+- Apogee print head
 - Sensorless homing X/Y
 - BTT Microprobe V2
 - usb-adxl345
@@ -20,5 +21,5 @@ __Install__:
 ```
 ln -s ~/printer_data/config/klippy/gcode_shell_command.py ~/klipper/klippy/extras/gcode_shell_command.py
 ln -s ~/printer_data/config/klippy/olli_homing.py ~/klipper/klippy/extras/olli_homing.py
-ln -s ~/printer_data/config/printers/moose/printer.cfg ~/printer_data/config/printer.cfg
+nano ~/printer_data/systemd/klipper.env
 ```
