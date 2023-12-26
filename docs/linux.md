@@ -40,3 +40,5 @@
 cd ~/klipper/out
 ~/klippy-env/bin/python3 -m http.server
 ```
+
+### samba
