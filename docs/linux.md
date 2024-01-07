@@ -30,6 +30,10 @@
   sudo apt install python3-numpy python3-matplotlib libatlas-base-dev
   ~/klippy-env/bin/pip3 install -v numpy==1.25.2 
   ```
+- __install openblas lib for numpy0.26.x__
+  ```
+  sudo apt-get install libopenblas-dev
+  ```
 - __numpy version__
   ```
   ~/klippy-env/bin/pip3 show numpy
