@@ -44,3 +44,9 @@
 cd ~/klipper/out
 ~/klippy-env/bin/python3 -m http.server
 ```
+### Git
+- __ignore local files__
+  ```
+  nano ~/klipper/.git/info/exclude
+  ```
+
