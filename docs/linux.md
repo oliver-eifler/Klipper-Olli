@@ -1,7 +1,8 @@
 # Linux 
 ## Nice to Know, copy&paste
 
-### updating
+### System
+- __update__
   ```
   sudo apt-get update
   sudo apt-get upgrade
@@ -11,6 +12,20 @@
   sudo apt-get clean
   sudo apt-get autoclean
   sudo apt autoremove
+  ```
+- __usb-serial ports with symlinks__
+  ```
+  ls -lR /dev/ | grep -v '\->\s../tty' | grep -v ttyprintk | grep -e 'tty[[:alpha:]]' -e serial
+  ```
+- __test klipper with serial ports__
+  ```
+    sudo systemctl stop klipper.service
+  ```
+  ```
+    ~/klipper $ ../klippy-env/bin/python ./klippy/console.py <PORT>
+  ```
+  ```
+    sudo systemctl start klipper.service
   ```
 
 ### Zeroconf/bonjour troubleshooting debian 11
