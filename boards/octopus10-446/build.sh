@@ -1,8 +1,8 @@
 #!/bin/bash
-if [ "$EUID" -ne 0 ]
-  then echo "ERROR: Please run as root"
-  exit
-fi
+#if [ "$EUID" -ne 0 ]
+#  then echo "ERROR: Please run as root"
+#  exit
+#fi
 cp -f /home/pi/printer_data/config/boards/octopus10-446/firmware.config /home/pi/klipper/.config
 pushd /home/pi/klipper
 make olddefconfig
