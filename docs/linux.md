@@ -13,6 +13,10 @@
   sudo apt-get autoclean
   sudo apt autoremove
   ```
+- __list package__
+  ```
+  apt list --installed | grep libatlas
+  ```
 - __usb-serial ports with symlinks__
   ```
   ls -lR /dev/ | grep -v '\->\s../tty' | grep -v ttyprintk | grep -e 'tty[[:alpha:]]' -e serial
@@ -52,6 +56,12 @@
 - __numpy version__
   ```
   ~/klippy-env/bin/pip3 show numpy
+  ```
+
+### Klipper python
+- __upgrade pip__
+  ```
+  ~/klippy-env/bin/pip install --upgrade pip
   ```
 
 ### btn web server
