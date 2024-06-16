@@ -10,11 +10,9 @@ __For internal use only__
 
 - BTT Octopus V1.0, Raspberry Pad with CM4
 - Independent dual Z
-- E3D Revo Hotend
-- LDO Orbit v2.0 Extruder with Orbiter Filament Sensor
-- Apogee print head
+- Creality Sprite Pro extruder
+- Creality CR-Touch
 - Sensorless homing X/Y
-- BTT Microprobe V2
 - usb-adxl345
 
 __Install__: 
