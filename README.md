@@ -4,16 +4,32 @@
 
 __For internal use only__
 
-## Olli Moose
+Klipper configuration for several printers with reuseable hardware configs, macros, scripts
 
-### Custom 310x310x400 bed slinger
+## Printers
 
+### Olli Moose
+- Custom bed slinger 
 - BTT Octopus V1.0, Raspberry Pad with CM4
 - Independent dual Z
 - Creality Sprite Pro extruder
 - Creality CR-Touch
 - Sensorless homing X/Y
 - usb-adxl345
+
+### ToDo - Olli Ender3 Pro
+- Modified Ender 3 Pro
+- SKR E3 Turbo Board, Raspberry PI3b, BTT TFT35 E3 - LCD12864 Mode only
+- Independent dual Z
+- Bondtech DDX with Copperhead Hotend
+- Bl-Touch
+- Sensorless homing X/Y
+- usb-adxl345
+
+### ToDo - Olli Doozer 
+- Custom CoreXY 235x235x235
+- BTT Manta M8P V2.0 with CB1, TFT35 SPI 2.0
+- Independent triple Z
 
 __Install__: 
 ```
