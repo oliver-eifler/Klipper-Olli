@@ -1,6 +1,6 @@
-# Klipper - Olli
+<img align="right" style="padding: 0 2em 2em 2em" width=128 src=".theme/sidebar-logo.svg" />
 
-<img align="right" width=128 src=".theme/sidebar-logo.svg" />
+# Klipper - Olli
 
 __For internal use only__
 
@@ -9,8 +9,8 @@ Klipper configuration for several printers with reuseable hardware configs, macr
 ## Printers
 
 ### Olli Moose
-- Custom bed slinger 
-- BTT Octopus V1.0, Raspberry Pad with CM4
+- Custom bed slinger 310x310x310
+- BTT Octopus V1.0, Raspberry Pad with CM4, Knomi
 - Independent dual Z
 - Creality Sprite Pro extruder
 - Creality CR-Touch
