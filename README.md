@@ -1,8 +1,6 @@
-<img align="right" style="padding: 0 2em 2em 2em" width=128 src=".theme/sidebar-logo.svg" />
-
 # Klipper - Olli
 
-__For internal use only__
+__For internal use only<img align="right" style="padding: 0 2em 2em 2em" width=128 src=".theme/sidebar-logo.svg" />__
 
 Klipper configuration for several printers with reuseable hardware configs, macros, scripts
 
@@ -22,7 +20,7 @@ Klipper configuration for several printers with reuseable hardware configs, macr
 - SKR E3 Turbo Board, Raspberry PI3b, BTT TFT35 E3 - LCD12864 Mode only
 - Independent dual Z
 - Bondtech DDX with Copperhead Hotend
-- Bl-Touch
+- BlTouch
 - Sensorless homing X/Y
 - usb-adxl345
 
