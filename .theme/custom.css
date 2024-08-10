@@ -1,0 +1,8 @@
+
+.topbar .nav-logo {
+	--color-logo: #4caf50;
+}
+
+.topbar .v-toolbar__title {
+    color: gold
+}
