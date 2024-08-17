@@ -17,6 +17,32 @@
   ```
   apt list --installed | grep libatlas
   ```
+- __list timezone__
+  ```
+  timedatectl list-timezones | grep Europe
+  ```
+- __set timezone__
+  ```
+  sudo timedatectl set-timezone <time zone>
+  ```
+- __activate NTP__
+  ```
+  sudo timedatectl set-ntp true
+  ```
+
+### Zeroconf/bonjour troubleshooting debian 11
+- __remove__
+  ```
+  sudo apt-get remove avahi-daemon
+  ```
+- __install__
+  ```
+  sudo apt-get install avahi-daemon
+  sudo update-rc.d avahi-daemon defaults
+  ```
+
+## Klipper 
+### serial ports
 - __usb-serial ports with symlinks__
   ```
   ls -lR /dev/ | grep -v '\->\s../tty' | grep -v ttyprintk | grep -e 'tty[[:alpha:]]' -e serial
@@ -32,18 +58,7 @@
     sudo systemctl start klipper.service
   ```
 
-### Zeroconf/bonjour troubleshooting debian 11
-- __remove__
-  ```
-  sudo apt-get remove avahi-daemon
-  ```
-- __install__
-  ```
-  sudo apt-get install avahi-daemon
-  sudo update-rc.d avahi-daemon defaults
-  ```
-
-### klipper numpy module issue
+### numpy module issue
 - __force numpy 1.25.2__
   ```
   sudo apt install python3-numpy python3-matplotlib libatlas-base-dev
@@ -58,18 +73,18 @@
   ~/klippy-env/bin/pip3 show numpy
   ```
 
-### Klipper python
+### python related
 - __upgrade pip__
   ```
   ~/klippy-env/bin/pip install --upgrade pip
   ```
+- __btn web server__
+  ```
+  cd ~/klipper/out
+  ~/klippy-env/bin/python3 -m http.server
+  ```
 
-### btn web server
-```
-cd ~/klipper/out
-~/klippy-env/bin/python3 -m http.server
-```
-### Git
+### Git related
 - __ignore local files__
   ```
   nano ~/klipper/.git/info/exclude
