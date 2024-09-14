@@ -74,9 +74,32 @@
   ```
 
 ### python related
+- __show klipper python version__
+  ```
+  ~/klippy-env/bin/python --version
+  ```
+- __upgrade klipper python__
+  ```
+  ~/klippy-env/bin/pip install -r https://raw.githubusercontent.com/Klipper3d/klipper/master/scripts/klippy-requirements.txt
+  ```
+- __upgrade klipper python!!!__
+  ```
+  ~/klippy-env/bin/pip list --outdated --format=freeze | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 ~/klippy-env/bin/pip install --upgrade
+  ```
 - __upgrade pip__
   ```
   ~/klippy-env/bin/pip install --upgrade pip
+  ```
+- __upgrade klipper python2 to python3__
+  ```
+  sudo service klipper stop
+
+  cd ~
+  rm -rf klippy-env
+  
+  virtualenv -p python3 klippy-env
+
+  ~klippy-bin/pip install -r ~/klipper/scripts/klippy-requirements.txt
   ```
 - __btn web server__
   ```
