@@ -1,12 +1,14 @@
 # Run a shell command via gcode
 #
 # Copyright (C) 2019  Eric Callahan <arksine.code@gmail.com>
+# Copyright (C) 2022  Mitko Haralanov <voidtrance@gmail.com>
 #
 # This file may be distributed under the terms of the GNU GPLv3 license.
 import os
 import shlex
 import subprocess
 import logging
+import ast
 
 
 class ShellCommand:
@@ -14,13 +16,32 @@ class ShellCommand:
         self.name = config.get_name().split()[-1]
         self.printer = config.get_printer()
         self.gcode = self.printer.lookup_object('gcode')
+        gcode_macro = self.printer.lookup_object('gcode_macro')
         cmd = config.get('command')
         cmd = os.path.expanduser(cmd)
         self.command = shlex.split(cmd)
         self.timeout = config.getfloat('timeout', 2., above=0.)
-        self.verbose = config.getboolean('verbose', True)
+        self.verbose = config.getboolean('verbose', False)
+        self.on_success_template = self.on_failure_template = None
+        if config.get("success", None) is not None:
+            self.on_success_template = gcode_macro.load_template(
+                config, 'success', '')
+        if config.get("failure", None) is not None:
+            self.on_failure_template = gcode_macro.load_template(
+                config, 'failure', '')
         self.proc_fd = None
         self.partial_output = ""
+        self.values = {}
+        prefix = 'value_'
+        for option in config.get_prefix_options(prefix):
+            try:
+                self.values[option[len(prefix):]] = \
+                    ast.literal_eval(config.get(option))
+            except ValueError as e:
+                raise config.error(
+                    "Option '%s' in section '%s' is not a valid literal" % (
+                        option, config.get_name()))
+        self.output_var_values = {}
         self.gcode.register_mux_command(
             "RUN_SHELL_COMMAND", "CMD", self.name,
             self.cmd_RUN_SHELL_COMMAND,
@@ -43,7 +64,14 @@ class ShellCommand:
             data = data[:split]
         else:
             self.partial_output = ""
-        self.gcode.respond_info(data)
+        prefix = "VALUE_UPDATE:"
+        for line in [x.strip() for x in data.split("\n")]:
+            if line and line.startswith(prefix):
+                var, value = line[len(prefix):].split("=")
+                if var in self.values:
+                    self.values[var] = value
+        if self.verbose:
+            self.gcode.respond_info(data)
 
     cmd_RUN_SHELL_COMMAND_help = "Run a linux shell command"
 
@@ -58,10 +86,10 @@ class ShellCommand:
             logging.exception(
                 "shell_command: Command {%s} failed" % (self.name))
             raise self.gcode.error("Error running command {%s}" % (self.name))
+        self.proc_fd = proc.stdout.fileno()
+        hdl = reactor.register_fd(self.proc_fd, self._process_output)
         if self.verbose:
-            self.proc_fd = proc.stdout.fileno()
             self.gcode.respond_info("Running Command {%s}...:" % (self.name))
-            hdl = reactor.register_fd(self.proc_fd, self._process_output)
         eventtime = reactor.monotonic()
         endtime = eventtime + self.timeout
         complete = False
@@ -72,17 +100,26 @@ class ShellCommand:
                 break
         if not complete:
             proc.terminate()
+        status = proc.wait()
         if self.verbose:
             if self.partial_output:
                 self.gcode.respond_info(self.partial_output)
                 self.partial_output = ""
+        reactor.unregister_fd(hdl)
+        self.proc_fd = None
+        kwparams = dict(self.values)
+        if status == 0 and self.on_success_template:
+            kwparams.update(self.on_success_template.create_template_context())
+            self.on_success_template.run_gcode_from_command(kwparams)
+        elif self.on_failure_template:
+            kwparams.update(self.on_failure_template.create_template_context())
+            self.on_failure_template.run_gcode_from_command(kwparams)
+        if self.verbose:
             if complete:
                 msg = "Command {%s} finished\n" % (self.name)
             else:
                 msg = "Command {%s} timed out" % (self.name)
             self.gcode.respond_info(msg)
-            reactor.unregister_fd(hdl)
-            self.proc_fd = None
 
 
 def load_config_prefix(config):

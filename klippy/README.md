@@ -18,6 +18,6 @@ todo: will do a real adaptive mesh by mesh size and mesh point grid size
 in ~/klipper/.git/info/exclude<br>
 add/remove
 ```
-klippy/extras/olli_homing.py<br>
-klippy/extras/gcode_shell_command.py<br>
+klippy/extras/olli_homing.py
+klippy/extras/gcode_shell_command.py
 ```
