@@ -13,6 +13,11 @@
   sudo apt-get autoclean
   sudo apt autoremove
   ```
+- __install midnight commander__
+  ```
+  sudo apt-get install mc 
+  sudo apt-get install gpm 
+  ```
 - __list package__
   ```
   apt list --installed | grep libatlas
@@ -28,6 +33,14 @@
 - __activate NTP__
   ```
   sudo timedatectl set-ntp true
+  ```
+- __list disk drives__
+  ```
+  sudo lsblk
+  ```
+- __show mountpoints__
+  ```
+  df -h /dev/sda*
   ```
 
 ### Zeroconf/bonjour troubleshooting debian 11
