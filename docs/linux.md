@@ -30,9 +30,18 @@
   ```
   sudo timedatectl set-timezone <time zone>
   ```
+- __activate NTP on Armbian__
+  ```
+  sudo apt remove chrony
+  sudo apt-get install systemd-timesyncd
+  systemctl status systemd-timesyncd.service
+  sudo timedatectl
+  sudo timedatectl set-ntp true
+  ```
 - __activate NTP__
   ```
   sudo timedatectl set-ntp true
+  sudo timedatectl
   ```
 - __list disk drives__
   ```
@@ -41,6 +50,14 @@
 - __show mountpoints__
   ```
   df -h /dev/sda*
+  ```
+- __diskspace browser__
+  ```
+  ncdu -x
+  ```
+- __cleanup locale, manpages, docs__
+  ```
+  sudo apt-get install localepurge
   ```
 
 ### Zeroconf/bonjour troubleshooting debian 11
