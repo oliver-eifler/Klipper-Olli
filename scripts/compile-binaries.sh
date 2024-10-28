@@ -8,6 +8,14 @@ compile_octopus10-446() {
     make
     cp -f /home/pi/klipper/out/klipper.bin /home/pi/printer_data/config/binaries/firmware-octopus10-446.bin
 }
+compile_manta-e3ez() {
+    echo "Compiling firmware for BTT Manta E3EZ"
+    cp -f /home/pi/printer_data/config/boards/manta-e3ez/firmware.config /home/pi/klipper/.config
+    make olddefconfig
+    make clean
+    make
+    cp -f /home/pi/klipper/out/klipper.bin /home/pi/printer_data/config/binaries/firmware-manta-e3ez.bin
+}
 
 compile_usb-adxl345() {
     echo "Compiling firmware for USB-ADXL345"
@@ -34,6 +42,7 @@ pushd /home/pi/klipper
 #cd /home/pi/klipper
 # Run make scripts for the supported boards.
 compile_octopus10-446
+compile_manta-e3ez
 compile_usb-adxl345
 chown pi:pi /home/pi/printer_data/config/binaries/*.bin
 
