@@ -22,27 +22,6 @@
   ```
   apt list --installed | grep libatlas
   ```
-- __list timezone__
-  ```
-  timedatectl list-timezones | grep Europe
-  ```
-- __set timezone__
-  ```
-  sudo timedatectl set-timezone <time zone>
-  ```
-- __activate NTP on Armbian__
-  ```
-  sudo apt remove chrony
-  sudo apt-get install systemd-timesyncd
-  systemctl status systemd-timesyncd.service
-  sudo timedatectl
-  sudo timedatectl set-ntp true
-  ```
-- __activate NTP__
-  ```
-  sudo timedatectl set-ntp true
-  sudo timedatectl
-  ```
 - __list disk drives__
   ```
   sudo lsblk
@@ -59,7 +38,36 @@
   ```
   sudo apt-get install localepurge
   ```
-
+### Time
+- __time settings__
+  ```
+  sudo timedatectl
+  ```
+- __list timezone__
+  ```
+  timedatectl list-timezones | grep Europe
+  ```
+- __set timezone__
+  ```
+  sudo timedatectl set-timezone <time zone>
+  ```
+- __activate NTP on Armbian__
+  ```
+  sudo apt remove chrony
+  sudo apt-get install systemd-timesyncd
+  systemctl status systemd-timesyncd.service
+  sudo timedatectl set-ntp true
+  sudo timedatectl
+  ```
+- __activate NTP__
+  ```
+  sudo timedatectl set-ntp true
+  sudo timedatectl
+  ```
+- __NTP connfiguration__
+  ```
+  sudo nano /etc/ntp.conf
+  ```
 ### Zeroconf/bonjour troubleshooting debian 11
 - __remove__
   ```
