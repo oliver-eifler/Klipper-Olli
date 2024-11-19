@@ -6,3 +6,8 @@
 .topbar .v-toolbar__title {
     color: gold
 }
+.consoleScrollContainer,
+.consoleTable {
+  font-family: monospace;
+  font-size: 13px;
+}
