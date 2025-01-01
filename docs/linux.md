@@ -78,7 +78,46 @@
   sudo apt-get install avahi-daemon
   sudo update-rc.d avahi-daemon defaults
   ```
+### Samba Server
+- __Install__
+  ```
+  sudo apt-get install samba samba-common smbclient
+  ```
+- __Check__
+  ```
+  sudo service smbd status
+  sudo service nmbd status
+  ```
+- __Restart__
+  ```
+  sudo service smbd restart
+  sudo service nmbd restart
+  ```
+- __Config__
+  ```
+  sudo mv /etc/samba/smb.conf /etc/samba/smb.conf_alt
+  ```
+  ```
+  sudo nano /etc/samba/smb.conf
+  ```
+  base config looks like
+  ```
+  [global]
+  workgroup = OLLI
+  security = user
+  #encrypt passwords = yes #default
+  client min protocol = SMB2
+  client max protocol = SMB3
 
+  [NAME]
+  comment = ...
+  path = /home/user_name
+  read only = no
+  ```
+- __Add samba user__
+  ```
+  sudo smbpasswd -a user_name
+  ```
 ## Klipper 
 ### serial ports
 - __usb-serial ports with symlinks__
