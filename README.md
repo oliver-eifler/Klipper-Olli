@@ -15,6 +15,15 @@ Klipper configuration for several printers with reuseable hardware configs, macr
 - Sensorless homing X/Y
 - usb-adxl345
 
+### Olli Moose CB2
+- Custom bed slinger 310x310x310
+- BTT Manta E3EZ, CB2, BTT PiTFT5
+- Independent dual Z
+- Creality Sprite Pro extruder
+- Creality CR-Touch
+- Sensorless homing X/Y
+- usb-adxl345
+
 ### ToDo - Olli Ender3 Pro
 - Modified Ender 3 Pro
 - SKR E3 Turbo Board, Raspberry PI3b, BTT TFT35 E3 - LCD12864 Mode only
