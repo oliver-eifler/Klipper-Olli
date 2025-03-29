@@ -7,7 +7,6 @@
 # Copyright (C) 2018  Kevin O'Connor <kevin@koconnor.net>
 # Modified by Mikkel Schmidt <mikkel.schmidt@gmail.com>
 #
-# Modified by Olli <olli.eifler@gmail.com> for Olli Klipper
 # This file may be distributed under the terms of the GNU GPLv3 license.
 
 class OlliHoming:
@@ -40,11 +39,10 @@ class OlliHoming:
             if 'z' not in kin_status['homed_axes']:
                 # Always perform the z_hop if the Z axis is not homed
                 pos[2] = 0
-                toolhead.set_position(pos, homing_axes=[2])
+                toolhead.set_position(pos, homing_axes="z")
                 toolhead.manual_move([None, None, self.z_hop],
                                      self.z_hop_speed)
-                if hasattr(toolhead.get_kinematics(), "note_z_not_homed"):
-                    toolhead.get_kinematics().note_z_not_homed()
+                toolhead.get_kinematics().clear_homing_state("z")
             elif pos[2] < self.z_hop:
                 # If the Z axis is homed, and below z_hop, lift it to z_hop
                 toolhead.manual_move([None, None, self.z_hop],
