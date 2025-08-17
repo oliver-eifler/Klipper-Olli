@@ -3,13 +3,7 @@
 *.code-workspace
 /*.cfg
 /*.conf
-/printer.cfg
-*-*_*.cfg
 input_shaper/
 input_shaper/*
 binaries/
 binaries/*
-saved_variables.cfg
-mainsail.cfg
-timelapse.cfg
-
