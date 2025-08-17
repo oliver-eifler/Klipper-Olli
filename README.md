@@ -6,6 +6,11 @@ Klipper configuration for several printers with reuseable hardware configs, macr
 
 ## Printers
 
+### Olli Doozer 
+- Custom CoreXY 235x235x235
+- BTT Manta M8P V2.0 with CB2
+- Independent triple Z
+
 ### Olli Moose
 - Custom bed slinger 310x310x310
 - BTT Octopus V1.0, Raspberry Pad with CM4, Knomi
@@ -26,17 +31,12 @@ Klipper configuration for several printers with reuseable hardware configs, macr
 
 ### ToDo - Olli Ender3 Pro
 - Modified Ender 3 Pro
-- SKR E3 Turbo Board, Raspberry PI3b, BTT TFT35 E3 - LCD12864 Mode only
+- SKR E3 Turbo Board, PAD7/CB2
 - Independent dual Z
 - Bondtech DDX with Copperhead Hotend
 - BlTouch
 - Sensorless homing X/Y
 - usb-adxl345
-
-### ToDo - Olli Doozer 
-- Custom CoreXY 235x235x235
-- BTT Manta M8P V2.0 with CB1, TFT35 SPI 2.0
-- Independent triple Z
 
 __Install__: 
 ```
