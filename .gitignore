@@ -3,6 +3,7 @@
 *.code-workspace
 /*.cfg
 /*.conf
+saved_variables.cfg
 input_shaper/
 input_shaper/*
 binaries/
