@@ -124,11 +124,17 @@
   comment = ...
   path = /home/user_name
   read only = no
+  follow symlinks = yes
+
   ```
+  _Only use /home/user_name share for windows access to ensure working symlinks (i.e. ~/printer_data/config/mainsail) as windows can't follow symlinks outside shared path_
+
+
 - __Add samba user__
   ```
   sudo smbpasswd -a user_name
   ```
+
 ## Klipper 
 ### serial ports
 - __usb-serial ports with symlinks__

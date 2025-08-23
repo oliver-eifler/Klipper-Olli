@@ -42,5 +42,4 @@ __Install__:
 ```
 ln -s ~/printer_data/config/klippy/gcode_shell_command.py ~/klipper/klippy/extras/gcode_shell_command.py
 ln -s ~/printer_data/config/klippy/olli_homing.py ~/klipper/klippy/extras/olli_homing.py
-cp ~/printer_data/config/printers/moose/printer.tpl ~/printer_data/config/printer.cfg
 ```
