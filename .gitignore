@@ -1,8 +1,8 @@
 *.bkp
 *.bak
 *.code-workspace
-*.cfg
-*.conf
+/*.cfg
+/*.conf
 input_shaper/
 input_shaper/*
 binaries/
