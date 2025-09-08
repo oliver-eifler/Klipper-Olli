@@ -206,4 +206,13 @@
   ```
   nano ~/klipper/.git/info/exclude
   ```
+### Raspberry PI
+- __board only detected when connecting after power on__
+  ```
+  sudo nano /etc/systemd/system/klipper.service
+  ```
+  add 
+  ``` 
+  ExecStartPre=/bin/sleep 10 
+  ```
 
