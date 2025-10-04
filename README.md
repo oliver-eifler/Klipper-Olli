@@ -7,7 +7,7 @@ Klipper configuration for several printers with reuseable hardware configs, macr
 ## Printers
 
 ### Olli Doozer 
-- Custom CoreXY 235x235x235
+- Custom CoreXY 235x235x220
 - BTT Manta M8P V2.0 with CB2
 - Independent triple Z
 
