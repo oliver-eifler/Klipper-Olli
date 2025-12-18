@@ -146,7 +146,7 @@
     sudo systemctl stop klipper.service
   ```
   ```
-    ~/klipper $ ../klippy-env/bin/python ./klippy/console.py <PORT>
+    ~/klippy-env/bin/python ~/klipper/klippy/console.py <PORT>
   ```
   ```
     sudo systemctl start klipper.service
