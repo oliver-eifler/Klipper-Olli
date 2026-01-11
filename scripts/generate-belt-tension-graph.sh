@@ -6,5 +6,5 @@ if [ ! -d ~/printer_data/config/input_shaper ]; then
     mkdir ~/printer_data/config/input_shaper
 #    #chown pi:pi /home/pi/printer_data/config/input_shaper
 fi
-~/klipper/scripts/graph_accelerometer.py -c "$NEWU" "$NEWL" -o ~/printer_data/config/input_shaper/belt-tension-resonances_$DATE.png
+~/klipper/scripts/graph_accelerometer.py "$NEWU" "$NEWL" -o ~/printer_data/config/input_shaper/belt-tension-resonances_$DATE.png
 
