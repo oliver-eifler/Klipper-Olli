@@ -1,0 +1,12 @@
+/home/olli/printer_data/logs/*.log
+{
+    nocompress
+    daily
+    minsize 4M
+    missingok
+    rotate 2
+    dateext
+    dateformat _%Y%m%d-%H%M
+}
+
+
