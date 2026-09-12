@@ -211,6 +211,13 @@
   ```
   nano ~/klipper/.git/info/exclude
   ```
+- __convert and Forces all line endings to LF in repository__
+  ```
+  git config core.autocrlf input
+  git rm --cached -r .
+  git reset --hard
+  ```
+
 ### Raspberry PI
 - __board only detected when connecting after power on__
   ```
