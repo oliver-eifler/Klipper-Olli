@@ -71,6 +71,10 @@
   ```
   sudo nano /etc/ntp.conf
   ```
+- __Chrony (armbian) NTP connfiguration__
+  ```
+  sudo nano /etc/chrony/chrony.conf
+  ```
 - __Armbian (bullseye) 'apt-get update fails with public key errors'__
   ```
   sudo wget https://apt.armbian.com/armbian.key -O key
