@@ -123,13 +123,14 @@
   #encrypt passwords = yes #default
   client min protocol = SMB2
   client max protocol = SMB3
+  allow insecure wide links = yes
 
-  [NAME]
-  comment = ...
-  path = /home/user_name
+  [olli]
+  comment = olli_home
+  path = /home/olli
   read only = no
   follow symlinks = yes
-
+  wide links = yes
   ```
   _Only use /home/user_name share for windows access to ensure working symlinks (i.e. ~/printer_data/config/mainsail) as windows can't follow symlinks outside shared path_
 
