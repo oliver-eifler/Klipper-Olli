@@ -4,7 +4,7 @@
 #  exit
 #fi
 MCU=/dev/serial/by-id/usb-Klipper_stm32h723xx_17003B001051313236343430-if00
-cp -f ~/printer_data/config/boards/manta-m8p-v2/firmware.config  ~/klipper/.config
+cp -f ~/printer_data/config/boards/manta-m8p-20/firmware.config  ~/klipper/.config
 pushd ~/klipper
 make olddefconfig
 make clean
